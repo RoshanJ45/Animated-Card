@@ -1,0 +1,73 @@
+    * {
+margin: 0;
+box-sizing: border-box;
+}
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+font-family: 'Arial', sans-serif;
+}
+.card {
+position: relative;
+width: 200px;
+height: 300px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 15px;
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card::before {
+content: '';
+position: absolute;
+width: 150%;
+height: 150%;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
+transform: translate(-50%, -50%) scale(0);
+transition: transform 0.5s ease;
+top: 50%;
+left: 50%;
+pointer-events: none;
+}
+.card:hover {
+transform: scale(1.05);
+box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+.card:hover::before {
+transform: translate(-50%, -50%) scale(1);
+}
+.card h1 {
+color: #fff;
+font-size: 2rem;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+margin-bottom: 10px;
+}
+.card p {
+color: rgba(255, 255, 255, 0.8);
+font-size: 1rem;
+text-align: center;
+padding: 0 20px;
+}
+.card button {
+margin-top: 20px;
+padding: 10px 20px;
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.4);
+color: #fff;
+border-radius: 25px;
+cursor: pointer;
+transition: background 0.3s ease, transform 0.3s ease;
+}
+.card button:hover {
+background: rgba(255, 255, 255, 0.4);
+transform: translateY(-5px);
+}
